@@ -591,3 +591,34 @@ button:active {
         opacity: 0;
     }
 }
+/* =========================
+   ADAPTACIÓN PARA CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .mensaje-final {
+        width: calc(100% - 30px);
+        max-width: none;
+
+        bottom: 15px;
+
+        padding: 20px 18px;
+
+        max-height: 70vh;
+        overflow-y: auto;
+
+        border-radius: 20px;
+    }
+
+    .mensaje-final h2 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .mensaje-final p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+}

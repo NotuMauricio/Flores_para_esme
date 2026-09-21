@@ -87,7 +87,7 @@ function mostrarMensajeFinal() {
 
     const texto =
         "Aunque hoy no pueda darte estas flores en persona, " +
-        "quería encontrar una forma de hacerte llegar un poquito de cariño. " +
+        "sabes lo especial que eres para mi. " +
         "Te amo mucho. 💛🌼";
 
     escribirTexto(texto);
