@@ -1,0 +1,593 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #fff9db,
+        #ffe58f
+    );
+
+    overflow: hidden;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 600px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    padding: 50px 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: blur(8px);
+}
+
+h1 {
+    font-size: 42px;
+
+    margin-bottom: 20px;
+
+    color: #5c4b00;
+}
+
+p {
+    font-size: 19px;
+
+    line-height: 1.6;
+
+    color: #5f5f5f;
+
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: #ffd43b;
+
+    color: #4d3d00;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+#flores {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 200px;
+
+    margin-top: 20px;
+}
+
+
+.flor {
+    position: absolute;
+
+    bottom: 0;
+
+    transform: scale(0);
+
+    animation: crecerFlor 1.5s ease forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes crecerFlor {
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+/* JARDÍN */
+
+#flores {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    margin-top: 20px;
+    overflow: visible;
+}
+
+/* Cada flor */
+
+.flor {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 190px;
+    transform-origin: bottom center;
+    animation: crecerFlor 1.5s ease forwards;
+}
+
+/* Cabeza */
+
+.cabeza {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    background: #ffd43b;
+    border-radius: 50%;
+    box-shadow:
+        0 -18px 0 #ffd43b,
+        0 18px 0 #ffd43b,
+        -18px 0 0 #ffd43b,
+        18px 0 0 #ffd43b,
+        -13px -13px 0 #ffd43b,
+        13px -13px 0 #ffd43b,
+        -13px 13px 0 #ffd43b,
+        13px 13px 0 #ffd43b;
+}
+
+/* Centro */
+
+.centro {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #8a6500;
+    border-radius: 50%;
+    top: 13px;
+    left: 13px;
+    z-index: 2;
+}
+
+/* Tallo */
+
+.tallo {
+    position: absolute;
+    width: 8px;
+    height: 130px;
+    background: #4caf50;
+    top: 45px;
+    left: 36px;
+    border-radius: 10px;
+}
+
+/* Hojas */
+
+.hoja {
+    position: absolute;
+    width: 35px;
+    height: 18px;
+    background: #4caf50;
+    border-radius: 100% 0 100% 0;
+}
+
+.hoja1 {
+    top: 105px;
+    left: 5px;
+    transform: rotate(-25deg);
+}
+
+.hoja2 {
+    top: 135px;
+    left: 40px;
+    transform: rotate(25deg) scaleX(-1);
+}
+
+/* Animación */
+
+@keyframes crecerFlor {
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/* MENSAJE FINAL */
+
+.mensaje-final {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 85%;
+    max-width: 600px;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    z-index: 100;
+
+    animation: aparecerMensaje 1.5s ease forwards;
+}
+
+.mensaje-final h2 {
+    color: #5c4b00;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.mensaje-final {
+    position: fixed;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+
+    width: 85%;
+    max-width: 600px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    z-index: 100;
+
+    animation: aparecerMensaje 1.5s ease forwards;
+}
+
+@keyframes aparecerMensaje {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px) scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+
+}
+/* FLORES DEL JARDÍN */
+
+.flor {
+    position: fixed;
+    bottom: -10px;
+
+    width: 80px;
+    height: 190px;
+
+    z-index: 50;
+
+    animation: crecerFlor 1.5s ease forwards;
+
+    pointer-events: none;
+}
+
+
+/* CABEZA */
+
+.cabeza {
+    position: absolute;
+
+    top: 0;
+    left: 15px;
+
+    width: 50px;
+    height: 50px;
+
+    background: #ffd43b;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 -18px 0 #ffd43b,
+        0 18px 0 #ffd43b,
+        -18px 0 0 #ffd43b,
+        18px 0 0 #ffd43b,
+        -13px -13px 0 #ffd43b,
+        13px -13px 0 #ffd43b,
+        -13px 13px 0 #ffd43b,
+        13px 13px 0 #ffd43b;
+}
+
+
+/* CENTRO */
+
+.centro {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    top: 13px;
+    left: 13px;
+
+    background: #8a6500;
+
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+
+/* TALLO */
+
+.tallo {
+    position: absolute;
+
+    width: 8px;
+    height: 130px;
+
+    top: 45px;
+    left: 36px;
+
+    background: #4caf50;
+
+    border-radius: 10px;
+}
+
+
+/* HOJAS */
+
+.hoja {
+    position: absolute;
+
+    width: 35px;
+    height: 18px;
+
+    background: #4caf50;
+
+    border-radius: 100% 0 100% 0;
+}
+
+.hoja1 {
+    top: 105px;
+    left: 5px;
+
+    transform: rotate(-25deg);
+}
+
+.hoja2 {
+    top: 135px;
+    left: 40px;
+
+    transform: rotate(25deg) scaleX(-1);
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes crecerFlor {
+
+    0% {
+        transform: translateY(100px) scale(0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(0) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* MENSAJE FINAL */
+
+.mensaje-final {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    width: 85%;
+    max-width: 600px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    z-index: 100;
+
+    animation: aparecerMensaje 1.5s ease forwards;
+}
+
+.mensaje-final h2 {
+    color: #5c4b00;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.mensaje-final p {
+    color: #555;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+
+@keyframes aparecerMensaje {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px) scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+
+}
+/* =========================
+   MOVIMIENTO DE LAS FLORES
+========================= */
+
+.flor {
+    animation:
+        crecerFlor 1.5s ease forwards,
+        viento 4s ease-in-out infinite 1.5s;
+
+    transform-origin: bottom center;
+}
+
+
+/* Movimiento suave */
+
+@keyframes viento {
+
+    0% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: 8px;
+    }
+
+    50% {
+        margin-left: -6px;
+    }
+
+    75% {
+        margin-left: 7px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+
+/* =========================
+   PÉTALOS
+========================= */
+
+.petalo {
+
+    position: fixed;
+
+    top: -20px;
+
+    background: #ffd43b;
+
+    border-radius: 50% 0 50% 50%;
+
+    opacity: 0.8;
+
+    z-index: 40;
+
+    pointer-events: none;
+
+    animation-name: caerPetalo;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+/* Caída de los pétalos */
+
+@keyframes caerPetalo {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(80px)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(-60px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
